@@ -1,7 +1,7 @@
 # ARCH-004 — Put external capabilities behind explicit boundaries
 
-**Status:** Adopt  
-**Confidence:** High
+**Status:** Trial
+**Confidence:** Medium
 
 ## Problem
 
@@ -24,6 +24,19 @@ Do not create an interface for every trivial helper. The boundary must protect a
 
 ## Evidence
 
-- Engineering Case Studies service/adapters guidance.
-- MercadoZetta repositories/mappers and payment/account boundaries.
-- Auth Lab auth/recorder/session service boundaries.
+- [FND-ECS-002](../findings/FND-ECS-002-explicit-boundaries.md): verified browser/service adapters.
+- [FND-CRT-001](../findings/FND-CRT-001-trust-boundary.md): verified local/cloud capability boundary.
+- [FND-MZ-002](../findings/FND-MZ-002-persistence-mapping.md) and [FND-AUTH-001](../findings/FND-AUTH-001-feature-adapters.md): historical corroboration.
+
+## Literature
+
+- [Ports and Adapters / Dependency Inversion](../references/models-and-practices.md#ports-and-adapters--dependency-inversion).
+
+## Fitness function
+
+Use dependency rules to prevent domain/UI code from importing designated infrastructure implementations directly. Review whether each interface protects a meaningful dependency.
+
+## Related
+
+- ARCH-001
+- SEC-001

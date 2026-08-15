@@ -1,0 +1,9 @@
+{
+  "name": "software-architecture-playbook",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-playbook.mjs"
+  }
+}
+

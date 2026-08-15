@@ -1,8 +1,11 @@
 # Technology / Package
 
-**Label:** Default | Recommended when needed | Alternative | Avoid unless | Legacy  
-**Responsibility:**  
+**Label:** Default | Recommended when needed | Alternative | Avoid unless | Legacy
+**Responsibility:**
 **Architectural impact:** Low | Medium | High
+**Reviewed:** YYYY-MM-DD
+**Evidence quality:** Verified | Mixed | Historical | None
+**Observed versions:** project/snapshot → version
 
 ## Problem it solves
 
@@ -19,6 +22,8 @@
 ## Alternatives
 
 ## Evidence
+
+Link project reviews or findings; do not use an unindexed project name.
 
 ## Notes / revisit trigger
 

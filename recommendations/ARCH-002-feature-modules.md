@@ -1,7 +1,7 @@
 # ARCH-002 — Organize around feature-oriented modules
 
-**Status:** Trial  
-**Confidence:** High
+**Status:** Trial
+**Confidence:** Medium
 
 ## Problem
 
@@ -23,8 +23,16 @@ Some cross-cutting concerns still require shared infrastructure. Small apps may 
 
 ## Evidence
 
-- Engineering Case Studies.
-- Auth Lab feature adapters and shared contracts.
+- [FND-ECS-001](../findings/FND-ECS-001-earned-abstractions.md): verified modules-first growth rule.
+- [FND-AUTH-001](../findings/FND-AUTH-001-feature-adapters.md): historical feature-adapter evidence.
+
+## Literature
+
+- [Fundamentals of Software Architecture](../references/books.md#fundamentals-of-software-architecture): coupling, cohesion and component boundaries.
+
+## Fitness function
+
+Check forbidden cross-feature internal imports. Ownership and whether a boundary is genuinely feature-shaped still require review.
 
 ## Related
 

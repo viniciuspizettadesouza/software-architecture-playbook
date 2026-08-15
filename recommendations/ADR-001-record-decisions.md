@@ -1,7 +1,7 @@
 # ADR-001 — Record significant architectural decisions
 
-**Status:** Adopt  
-**Confidence:** High
+**Status:** Trial
+**Confidence:** Medium
 
 ## Problem
 
@@ -21,4 +21,17 @@ Do not create an ADR for trivial implementation details.
 
 ## Evidence
 
-MercadoZetta maintains ADRs for sessions, persistence, recovery, account management, money/payments and development message handling.
+- [FND-ECS-001](../findings/FND-ECS-001-earned-abstractions.md) and [FND-ECS-003](../findings/FND-ECS-003-static-first-quality.md): verified decisions with context, alternatives and consequences.
+- [FND-MZ-003](../findings/FND-MZ-003-architecture-decisions.md): broader but historical ADR evidence.
+
+## Literature
+
+- [Architecture Decision Records](../references/models-and-practices.md#architecture-decision-records-adrs).
+
+## Fitness function
+
+Check that accepted ADRs contain status, context, decision and consequences. Human review remains necessary to decide whether a change is architecturally significant.
+
+## Related
+
+- CI-001

@@ -1,7 +1,7 @@
 # ARCH-001 — Protect domain/core from delivery mechanisms
 
-**Status:** Adopt  
-**Confidence:** High
+**Status:** Adopt
+**Confidence:** Medium
 
 ## Problem
 
@@ -24,10 +24,19 @@ For very small applications, introducing a formal domain layer can create unnece
 
 ## Evidence
 
-- Habemus Papam: reusable core consumed by CLI and Chrome extension.
-- Engineering Case Studies: framework-independent `domain/` guidance.
-- Auth Lab: shared method/flow/session contracts separated from UI adapters.
+- [FND-HAB-001](../findings/FND-HAB-001-independent-core.md): verified core consumed by CLI, extension and npm consumers.
+- [FND-ECS-002](../findings/FND-ECS-002-explicit-boundaries.md): verified framework-independent domain modules.
+- [FND-AUTH-001](../findings/FND-AUTH-001-feature-adapters.md): corroborating historical scan.
 
-## Literature mapping
+## Literature
 
-Dependency Inversion, Ports and Adapters, Functional Core / Interface Shell, Clean Architecture concepts.
+- [Ports and Adapters / Dependency Inversion](../references/models-and-practices.md#ports-and-adapters--dependency-inversion).
+
+## Fitness function
+
+Use import-boundary rules to prevent core/domain modules from importing UI, browser, HTTP or framework packages; supplement this with tests through the public core API.
+
+## Related
+
+- ARCH-003
+- ARCH-004

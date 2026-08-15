@@ -1,7 +1,7 @@
 # DATA-001 — Separate persistence representation from application/domain models
 
-**Status:** Trial  
-**Confidence:** High
+**Status:** Assess
+**Confidence:** Medium
 
 ## Problem
 
@@ -23,8 +23,16 @@ For simple CRUD data, mapping layers can become mechanical duplication.
 
 ## Evidence
 
-MercadoZetta contains explicit repository mappers between database rows and application representations.
+- [FND-MZ-002](../findings/FND-MZ-002-persistence-mapping.md): specific historical scan; the source snapshot still needs verification.
 
-## Literature mapping
+## Literature
 
-Related to Fowler's Data Mapper pattern.
+- [Fowler's Data Mapper](../references/books.md#patterns-of-enterprise-application-architecture).
+
+## Fitness function
+
+Dependency rules can keep persistence types out of domain/public modules. Whether mapping is semantically useful rather than mechanical duplication requires review.
+
+## Related
+
+- ARCH-004

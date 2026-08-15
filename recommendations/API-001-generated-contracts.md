@@ -1,7 +1,7 @@
 # API-001 — Derive consumer types from an authoritative API contract
 
-**Status:** Trial  
-**Confidence:** High
+**Status:** Assess
+**Confidence:** Medium
 
 ## Problem
 
@@ -36,8 +36,22 @@ A tiny prototype would gain more complexity from generation than value from cont
 
 ## Evidence
 
-MercadoZetta uses Zod → OpenAPI → `openapi-typescript` → frontend contracts, with contract checks.
+- [FND-MZ-001](../findings/FND-MZ-001-generated-api-contracts.md): detailed historical scan; the source snapshot still needs verification.
 
 ## Trade-offs
 
 Adds generation tooling, CI steps and coupling to the API-description format.
+
+## Literature
+
+- [Contract-first APIs](../references/models-and-practices.md#contract-first-apis).
+- [Architecture fitness functions](../references/books.md#building-evolutionary-architectures).
+
+## Fitness function
+
+Regenerate the contract and consumer types in CI, then fail when the working tree differs or when contract tests detect implementation drift.
+
+## Related
+
+- CI-001
+- ARCH-004

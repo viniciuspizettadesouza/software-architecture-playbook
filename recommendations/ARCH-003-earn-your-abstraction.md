@@ -1,7 +1,7 @@
 # ARCH-003 — Earn your abstraction
 
-**Status:** Adopt  
-**Confidence:** High
+**Status:** Adopt
+**Confidence:** Medium
 
 ## Problem
 
@@ -21,10 +21,20 @@ Waiting can create temporary duplication. That duplication is acceptable when it
 
 ## Evidence
 
-- Engineering Case Studies explicitly postpones packages until reuse appears.
-- Habemus Papam has a real reusable core because multiple interfaces consume it.
-- Auth Lab shares stable method-independent contracts rather than every implementation detail.
+- [FND-ECS-001](../findings/FND-ECS-001-earned-abstractions.md): verified two-consumer and ownership rule.
+- [FND-HAB-001](../findings/FND-HAB-001-independent-core.md): verified reusable core with multiple real consumers.
+- [FND-AUTH-001](../findings/FND-AUTH-001-feature-adapters.md): corroborating historical scan.
+
+## Literature
+
+- [A Philosophy of Software Design](../references/books.md#a-philosophy-of-software-design): complexity and module design.
+- [YAGNI](../references/models-and-practices.md#yagni).
 
 ## Fitness function
 
 Where practical, check dependency direction and shared-package ownership in CI.
+
+## Related
+
+- ARCH-002
+- SIMPLE-001

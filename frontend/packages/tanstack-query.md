@@ -1,8 +1,11 @@
 # TanStack Query
 
-**Label:** Recommended when needed  
-**Responsibility:** Remote/server state  
+**Label:** Recommended when needed
+**Responsibility:** Remote/server state
 **Architectural impact:** Medium
+**Reviewed:** 2026-08-16
+**Evidence quality:** Historical
+**Observed versions:** Not retained in the source scan
 
 ## Use when
 
@@ -26,4 +29,8 @@ Adds another state model and invalidation semantics that the team must understan
 
 ## Evidence
 
-MercadoZetta.
+[MercadoZetta](../../projects/mercadozetta.md). This remains historical evidence until that project is re-scanned.
+
+## Alternatives and revisit trigger
+
+Compare direct fetch logic, framework-native data mechanisms and SWR when cache/invalidation requirements or rendering ownership change.

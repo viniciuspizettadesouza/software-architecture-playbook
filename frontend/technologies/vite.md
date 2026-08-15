@@ -1,7 +1,10 @@
 # Vite
 
-**Label:** Default for client-side apps  
+**Label:** Default for client-side apps
 **Architectural impact:** Medium
+**Reviewed:** 2026-08-16
+**Evidence quality:** Mixed
+**Observed versions:** Personal Portfolio `^6.4.3`
 
 ## Use when
 
@@ -19,4 +22,8 @@ You must choose routing/data/server integration separately. If the product genui
 
 ## Evidence
 
-MercadoZetta frontend, Engineering Case Studies, personal portfolio.
+[MercadoZetta](../../projects/mercadozetta.md) is historical evidence; [Engineering Case Studies](../../projects/engineering-case-studies.md) and [Personal Portfolio](../../projects/personal-portfolio.md) have recorded snapshots.
+
+## Alternatives and revisit trigger
+
+Use a server-capable framework when server-only behavior or rendering is an actual driver. Reassess on material build/runtime constraints, not benchmark headlines alone.

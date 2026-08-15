@@ -1,6 +1,6 @@
 # ID — Recommendation title
 
-**Status:** Assess | Trial | Adopt | Avoid  
+**Status:** Assess | Trial | Adopt | Avoid
 **Confidence:** Low | Medium | High
 
 ## Problem
@@ -25,11 +25,11 @@ What gets worse or more complex?
 
 ## Evidence
 
-- project(s)
+- finding links, including contradictory evidence
 
 ## Literature
 
-- source(s)
+- source, concept/pattern and useful locator
 
 ## Fitness function
 
@@ -38,3 +38,5 @@ Can any important part be automatically checked?
 ## Related
 
 - IDs
+
+Promotion status and confidence must follow [`../METHODOLOGY.md`](../METHODOLOGY.md); they are separate dimensions.

@@ -1,7 +1,10 @@
 # React
 
-**Label:** Default  
+**Label:** Default
 **Architectural impact:** High
+**Reviewed:** 2026-08-16
+**Evidence quality:** Mixed
+**Observed versions:** Personal Portfolio `^19.2.8`; Portugal Prático `^19.0.0`
 
 ## Role
 
@@ -20,4 +23,8 @@ It is the common denominator across several reference projects and supports both
 
 ## Evidence
 
-MercadoZetta, Auth Lab, Engineering Case Studies, personal portfolio, Portugal Prático.
+[MercadoZetta](../../projects/mercadozetta.md) and [Auth Lab](../../projects/auth-lab.md) are historical evidence; [Engineering Case Studies](../../projects/engineering-case-studies.md), [Personal Portfolio](../../projects/personal-portfolio.md) and [Portugal Prático](../../projects/portugal-pratico.md) have recorded snapshots.
+
+## Alternatives and revisit trigger
+
+Reassess the default when product constraints favor another rendering/component model or when repeated projects show lower change cost with an alternative. Compare architecture and delivery needs before ecosystem familiarity.

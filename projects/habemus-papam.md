@@ -1,18 +1,32 @@
-# Project Evidence — Habemus Papam
+# Project Review — Habemus Papam
+
+**Evidence status:** Verified snapshot
+**Repository:** https://github.com/viniciuspizettadesouza/habemus-papam
+**Analyzed snapshot:** `97a2eccf6bfcb9b58868cb68d0f8b1e92e1d2b53`
+**Reviewed:** 2026-08-16
+**Weight:** 5/5
 
 ## Context
 
-Monorepo containing reusable Pope-information core package, CLI and Chrome extension.
+Monorepo containing a public Pope-information core package, private CLI and Chrome extension.
 
-## Strong observations
+## Architecture summary
 
-- core is the source of truth;
-- core does not depend on terminal, HTML or Chrome APIs;
-- delivery mechanisms consume public core interfaces;
-- date-dependent functions accept a reference date for deterministic testing;
-- CI validates multiple Node versions and delivery artifacts;
-- packed npm package is tested, not only source code.
+```text
+npm consumers ─┐
+CLI ───────────┼──→ public core API → data and date rules
+extension ─────┘
+```
 
-## Supports
+## Strong decisions observed
 
-ARCH-001, TEST-001, CI-001, PKG-001.
+- [FND-HAB-001](../findings/FND-HAB-001-independent-core.md): delivery mechanisms depend on a framework-independent core.
+- [FND-HAB-002](../findings/FND-HAB-002-artifact-testing.md): CI tests the packed package and delivery artifacts.
+
+## Weaknesses / improvement opportunities
+
+The reusable public package creates compatibility and release obligations. This is justified by multiple real consumers but would be overhead for a single-interface application.
+
+## Recommendations supported
+
+ARCH-001, ARCH-003, TEST-001, CI-001 and PKG-001.

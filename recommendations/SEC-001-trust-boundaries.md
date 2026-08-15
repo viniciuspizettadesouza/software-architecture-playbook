@@ -1,6 +1,6 @@
 # SEC-001 — Make trust boundaries explicit
 
-**Status:** Adopt  
+**Status:** Trial
 **Confidence:** High
 
 ## Problem
@@ -13,8 +13,21 @@ Document and implement explicit trust boundaries. Identify which component owns 
 
 ## Evidence
 
-Codex Reset Tracker keeps Codex authentication on the local machine while the hosted service receives only a sanitized authenticated payload.
+- [FND-CRT-001](../findings/FND-CRT-001-trust-boundary.md): verified local/cloud credential and capability separation.
 
 ## Trade-offs
 
 Additional components/protocols can increase operational complexity, but the separation is justified when privileged data would otherwise move into a less trusted environment.
+
+## Literature
+
+- [Threat Modeling](../references/books.md#threat-modeling-designing-for-security): data-flow diagrams and trust boundaries.
+
+## Fitness function
+
+Test boundary authentication, bind private services to intended interfaces and scan hosted payload/storage schemas for prohibited credential or identity fields.
+
+## Related
+
+- SEC-002
+- ARCH-004

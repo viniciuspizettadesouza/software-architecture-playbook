@@ -1,6 +1,6 @@
 # PKG-001 — Test the artifact that will actually be distributed
 
-**Status:** Trial  
+**Status:** Trial
 **Confidence:** High
 
 ## Problem
@@ -20,4 +20,21 @@ Examples:
 
 ## Evidence
 
-Habemus Papam tests its packed npm package and delivery-specific artifacts in CI.
+- [FND-HAB-002](../findings/FND-HAB-002-artifact-testing.md): verified packed npm package, CLI and extension checks.
+
+## Trade-offs
+
+Packaging tests add CI time and may require platform-specific setup, but source tests cannot cover export maps, missing files or bundle assembly.
+
+## Literature
+
+- [Building Evolutionary Architectures](../references/books.md#building-evolutionary-architectures): executable fitness functions at delivery boundaries.
+
+## Fitness function
+
+Pack/install and execute the artifact in a temporary consumer environment; verify public exports, declarations and delivery-specific smoke paths.
+
+## Related
+
+- CI-001
+- TEST-001

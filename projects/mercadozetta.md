@@ -1,39 +1,47 @@
-# Project Evidence — MercadoZetta
+# Project Review — MercadoZetta
+
+**Evidence status:** Historical scan
+**Analyzed snapshot:** Not recorded
+**Review reconstructed:** 2026-08-16
+**Weight:** 5/5
 
 ## Context
 
-Production-oriented multitenant marketplace with React frontend, Express API, PostgreSQL/Drizzle persistence and a comparatively deep production/CI setup.
+Production-oriented multitenant marketplace with React frontend, Express API, PostgreSQL/Drizzle persistence and comparatively deep production/CI concerns.
 
-## Strong observations
+## Architecture summary
 
-### API contracts
+```text
+React consumer ← generated OpenAPI types ← backend Zod contracts
+                                            ↓
+Express application → repositories/mappers → PostgreSQL
+```
 
-Backend Zod schemas feed OpenAPI generation, which feeds generated frontend TypeScript contracts. Contract checks help detect drift.
+## Technologies
 
-**Supports:** API-001, CI-001.
+| Area | Choice | Role | Impact |
+|---|---|---|---|
+| Frontend | React, TypeScript, Vite | Interactive client | High |
+| API | Express, Zod, OpenAPI | HTTP and authoritative contracts | High |
+| Persistence | PostgreSQL, Drizzle | Durable multitenant data | High |
+| Remote state | TanStack Query | Request lifecycle/cache | Medium |
+| Verification | Vitest, Testing Library, Supertest, Playwright | Layered tests | Medium |
 
-### Persistence mapping
+## Strong decisions observed
 
-Explicit repository mappers separate database rows from application-facing representations.
+- [FND-MZ-001](../findings/FND-MZ-001-generated-api-contracts.md): generated API contracts.
+- [FND-MZ-002](../findings/FND-MZ-002-persistence-mapping.md): explicit persistence mapping.
+- [FND-MZ-003](../findings/FND-MZ-003-architecture-decisions.md): significant decisions recorded as ADRs.
+- [FND-MZ-004](../findings/FND-MZ-004-layered-ci.md): CI responsibilities separated by risk.
 
-**Supports:** DATA-001, ARCH-004.
+## Weaknesses / improvement opportunities
 
-### Architectural decisions
+The source scan did not retain the repository URL, commit or evidence paths. Re-scan the project before treating these observations as verified evidence.
 
-ADRs cover sessions, PostgreSQL, persistence tooling, account recovery, account management, authoritative money and payment topics.
+## Recommendations supported
 
-**Supports:** ADR-001.
-
-### Layered validation
-
-CI separates audit, validation, deployment validation, database integration, browser E2E and production smoke responsibilities.
-
-**Supports:** TEST-001, CI-001.
-
-### Frontend technology evidence
-
-React, TypeScript, Vite, TanStack Query, Zod, React Router, Tailwind, Vitest, Testing Library and Playwright.
+API-001, DATA-001, ARCH-004, ADR-001, TEST-001 and CI-001.
 
 ## Caution
 
-This is the strongest full-stack reference in the current evidence set, but its production mechanisms should not automatically be copied into smaller projects.
+This was the strongest full-stack project in the initial scan, but its production mechanisms should not automatically be copied into smaller systems.
