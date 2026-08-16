@@ -1,33 +1,23 @@
-# Project Review — Engineering Case Studies
+# Engineering Case Studies
 
-**Evidence status:** Verified snapshot
-**Repository:** https://github.com/viniciuspizettadesouza/engineering-case-studies
-**Analyzed snapshot:** `745a5f58f8381028bc795f4dd479a158d31b1d03`
-**Reviewed:** 2026-08-16
-**Weight:** 5/5
+Executable architecture and testing case studies delivered as a static-first React application.
 
-## Context
+## Interesting architecture decisions
 
-Executable case studies focused on architecture, trade-offs, accessibility and testing, delivered as a static-first React application.
+### Abstractions follow consumers
 
-## Architecture summary
+Code begins in cohesive modules; shared packages appear only when multiple consumers reveal a stable boundary.
 
-```text
-routes → components → domain
-   └────→ services ───→ domain
-fixtures/browser capabilities implement service contracts
-```
+### Explicit dependencies
 
-## Strong decisions observed
+Routes and components depend on framework-independent domain modules and application-owned service contracts. Browser capabilities and fixtures act as adapters.
 
-- [FND-ECS-001](../findings/FND-ECS-001-earned-abstractions.md): modules precede packages; real consumers earn abstractions.
-- [FND-ECS-002](../findings/FND-ECS-002-explicit-boundaries.md): framework-independent domain and explicit adapters.
-- [FND-ECS-003](../findings/FND-ECS-003-static-first-quality.md): static-first delivery and layered quality checks.
+### Static-first delivery
 
-## Weaknesses / improvement opportunities
+The system avoids server infrastructure without a server-only requirement and automates formatting, types, tests and builds.
 
-The workspace/tooling boundary exists before a second deployable app. This is documented as an accepted cost, not proof that every small application needs a monorepo.
+Related concepts: [YAGNI](../concepts/yagni.md), [Cohesion and Coupling](../concepts/cohesion-and-coupling.md), [Dependency Inversion](../concepts/dependency-inversion.md), [Proportional Architecture](../concepts/proportional-architecture.md) and [Fitness Functions](../concepts/fitness-functions.md).
 
-## Recommendations supported
+## Trade-off to remember
 
-ARCH-001, ARCH-002, ARCH-003, ARCH-004, ADR-001, TEST-001, CI-001 and SIMPLE-001.
+Workspace tooling has a cost before a second deployable app exists; it is a contextual decision, not a baseline for every small frontend.

@@ -1,54 +1,19 @@
-# Project Review Template
+# Project Name
 
-**Evidence status:** Verified snapshot | Historical scan | Reported | Hypothesis
-**Repository:**
-**Analyzed snapshot:**
-**Reviewed:** YYYY-MM-DD
-**Weight:** 1/5 to 5/5 (playbook relevance, not project quality)
+One paragraph describing the system and the constraints that matter.
 
-## Context
+## Interesting architecture decisions
 
-What kind of system is this? What constraints matter?
+### Decision or pattern
 
-## Architecture summary
+Explain what the project does, why it is interesting and which context makes it reasonable.
 
-```text
-High-level structure here
-```
+Related concepts:
 
-## Technologies
+- Link one or more pages from [`../concepts/`](../concepts/README.md).
 
-| Area | Choice | Role | Architectural impact |
-|---|---|---|---|
-| | | | Low / Medium / High |
+## Trade-off to remember
 
-## Strong decisions observed
+Record the cost, limitation or condition that prevents the example from becoming a universal rule.
 
-### Finding 1
-
-**Evidence:**
-**Why it is strong:**
-**Context where it works:**
-**Trade-offs:**
-**Candidate recommendation:**
-**Literature mapping:**
-
-Create an atomic file from [`finding.md`](finding.md) for every finding promoted beyond this review.
-
-## Weaknesses / improvement opportunities
-
-Separate “not used” from “should have been used”. Missing complexity is not automatically a defect.
-
-## New recommendations proposed
-
-- ID:
-- Status:
-- Confidence:
-
-## Existing recommendations supported/contradicted
-
-- Supports:
-- Contradicts:
-- Context changes:
-
-Follow [`../METHODOLOGY.md`](../METHODOLOGY.md). Never invent a commit or path when the original scan did not retain it.
+Follow the short [`METHODOLOGY.md`](../METHODOLOGY.md). Add source links only when they help future consultation; commit snapshots and evidence rankings are not required.

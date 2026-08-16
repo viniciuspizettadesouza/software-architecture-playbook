@@ -1,31 +1,17 @@
-# Project Review — TCC Project
-
-**Evidence status:** Verified snapshot
-**Repository:** https://github.com/viniciuspizettadesouza/tcc-project
-**Analyzed snapshot:** `467a623a0e992363c6d3207d9e427973b751af8e`
-**Reviewed:** 2026-08-16
-**Weight:** 4/5 specialized
-
-## Context
+# TCC Project
 
 Reconstructed data-science/ML thesis project where the original notebook was incomplete and some historical results cannot be reproduced exactly.
 
-## Architecture summary
+## Interesting architecture decisions
+
+Inputs, hashes and environment assumptions feed a deterministic reconstruction pipeline. Recovered historical material stays distinct from newly generated output, and comparisons make conflicts visible.
 
 ```text
-protected sources + hashes → reconstruction pipeline → deterministic execution
-                                                   ↓
-                                     result/evidence comparison
+sources + manifests + hashes → reconstruction → result comparison
 ```
 
-## Strong decisions observed
+Related concepts: [Reproducible Results](../concepts/reproducible-results.md) and [Fitness Functions](../concepts/fitness-functions.md).
 
-- [FND-TCC-001](../findings/FND-TCC-001-reproducible-results.md): provenance, deterministic samples and comparison evidence constrain claims.
+## Trade-off to remember
 
-## Weaknesses / improvement opportunities
-
-Full execution requires a large local dataset and expensive environment. Some original sampling choices were never preserved and remain explicitly irreproducible.
-
-## Recommendations supported
-
-REPRO-001 and CI-001.
+Full execution needs a large protected dataset and expensive environment. Unrecoverable sampling choices are documented as limitations instead of being concealed.

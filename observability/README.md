@@ -1,18 +1,15 @@
 # Observability Guidance
 
-## Current evidence status
+Observability should help answer whether the system is working for its users and why it is not. Choose mechanisms from operational risk, not from vendor defaults.
 
-No indexed finding yet provides enough verified evidence for a reusable observability recommendation. This is a deliberate gap, not permission to omit observability from systems that require it.
+## Review questions
 
-## What future scans should inspect
+- Which user or business outcomes need service-level indicators?
+- Can logs, metrics and traces be correlated across important boundaries?
+- Does every alert have an actionable condition and an owner?
+- Is telemetry minimized to avoid leaking private or sensitive data?
+- Are deployment and incident/recovery events visible?
+- What are the retention, cost and vendor-coupling trade-offs?
+- Can smoke checks show that critical telemetry still works?
 
-- service-level indicators and objectives tied to user/business outcomes;
-- structured logs and correlation across boundaries;
-- metrics, traces and actionable alert ownership;
-- privacy and data minimization in telemetry;
-- deployment markers and incident/recovery evidence;
-- cost, retention and vendor coupling;
-- tests or smoke checks proving telemetry remains functional.
-
-The first recommendation should be created only after a project-specific finding records context, evidence, trade-offs and an operational quality scenario.
-
+Start with the smallest signals that support real operational decisions. Add a project example when these choices have useful context to preserve.

@@ -2,55 +2,34 @@
 
 ## Start here
 
-- [`README.md`](README.md)
-- [`METHODOLOGY.md`](METHODOLOGY.md)
-- [`EVIDENCE.md`](EVIDENCE.md)
-- [`HISTORY.md`](HISTORY.md)
-- [`frontend/reference-stack.md`](frontend/reference-stack.md)
+- [Playbook overview](README.md)
+- [Architecture glossary](architecture/glossary.md)
+- [Concept index](concepts/README.md)
+- [Frontend reference stack](frontend/reference-stack.md)
+- [Methodology](METHODOLOGY.md)
 
-## Evidence pipeline
+## Knowledge
 
-- [`projects/inventory.md`](projects/inventory.md)
-- [`projects/`](projects/): nine project reviews with snapshot/evidence status.
-- [`findings/README.md`](findings/README.md): index of 15 atomic findings.
-- [`recommendations/`](recommendations/): 15 reusable recommendations.
-- [`principles/`](principles/): durable principles derived from recommendations.
+- [Principles](principles/README.md): durable decision heuristics.
+- [Concepts](concepts/README.md): architecture, design and engineering vocabulary.
+- [Projects](projects/README.md): examples and lessons from implemented systems.
+- [References](references/books.md): books, practices and standards.
 
-## Frontend playbook
+## Practical areas
 
-- [`frontend/README.md`](frontend/README.md)
-- [`frontend/architecture/`](frontend/architecture/): data fetching, dependency direction, feature boundaries, project structure and state management.
-- [`frontend/examples/`](frontend/examples/): simple SPA, enterprise SPA and full-stack React contexts.
-- [`frontend/technologies/`](frontend/technologies/): React, TypeScript, Vite and Next.js.
-- [`frontend/packages/`](frontend/packages/): MUI, React Router, Tailwind, TanStack Query and Zod.
-- [`frontend/testing/`](frontend/testing/): strategy, Vitest, Testing Library and Playwright.
-- [`frontend/tooling/`](frontend/tooling/): dependency management, ESLint and Prettier.
+- [Frontend](frontend/README.md)
+- [Backend](backend/README.md)
+- [API](api/README.md)
+- [Data and persistence](data/README.md)
+- [Testing](testing/README.md)
+- [Security](security/README.md)
+- [Observability](observability/README.md)
+- [Delivery and platform](delivery/README.md)
 
-## Cross-cutting guidance
+## Templates and automation
 
-- [`backend/README.md`](backend/README.md)
-- [`api/README.md`](api/README.md)
-- [`data/README.md`](data/README.md)
-- [`security/README.md`](security/README.md)
-- [`observability/README.md`](observability/README.md)
-- [`delivery/README.md`](delivery/README.md)
-
-## Reference corpus
-
-- [`references/books.md`](references/books.md)
-- [`references/models-and-practices.md`](references/models-and-practices.md)
-- [`references/standards.md`](references/standards.md)
-
-## Templates
-
-- [`templates/project-review.md`](templates/project-review.md)
-- [`templates/finding.md`](templates/finding.md)
-- [`templates/recommendation.md`](templates/recommendation.md)
-- [`templates/technology.md`](templates/technology.md)
-- [`templates/adr.md`](templates/adr.md)
-
-## Automation
-
-- `package.json`: exposes `npm run validate`.
-- `scripts/validate-playbook.mjs`: checks links, IDs, metadata, required sections and README status consistency.
-- `.github/workflows/validate.yml`: runs the validator for pushes and pull requests.
+- [Concept template](templates/concept.md)
+- [Project example template](templates/project-review.md)
+- [Technology template](templates/technology.md)
+- [ADR template](templates/adr.md)
+- `npm run validate` checks local Markdown links.

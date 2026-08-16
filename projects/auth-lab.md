@@ -1,33 +1,19 @@
-# Project Review — Auth Lab
+# Auth Lab
 
-**Evidence status:** Historical scan
-**Analyzed snapshot:** Not recorded
-**Review reconstructed:** 2026-08-16
-**Weight:** 5/5
+Full-stack authentication and identity laboratory built with Next.js, React, TypeScript, PostgreSQL and several authentication methods.
 
-## Context
+## Interesting architecture decisions
 
-Full-stack authentication/identity laboratory built with Next.js, React, TypeScript, Better Auth, Drizzle/PostgreSQL, Zod, Vitest/Testing Library and Playwright.
-
-## Architecture summary
+Feature adapters for password, passkey, federation and other methods are composed behind stable flow, session and service contracts.
 
 ```text
-UI/features → stable method/flow/session contracts
-                  ↓
-          feature adapter registry
-                  ↓
- auth / recorder / session services → separate persistence schemas
+UI/features → stable contracts → adapter registry → auth/session services
 ```
 
-## Strong decisions observed
+This lets authentication methods vary while shared flows remain understandable.
 
-- [FND-AUTH-001](../findings/FND-AUTH-001-feature-adapters.md): feature adapters composed behind stable contracts and service boundaries.
+Related concepts: [Feature-based Architecture](../concepts/feature-based-architecture.md), [Ports and Adapters](../concepts/ports-and-adapters.md), [Dependency Inversion](../concepts/dependency-inversion.md) and [Layered Testing](../concepts/layered-testing.md).
 
-## Weaknesses / improvement opportunities
+## Trade-off to remember
 
-- The original scan did not find a generic GitHub Actions validation workflow comparable to the local quality setup.
-- The repository URL, commit and exact evidence paths were not retained; re-scan before promotion to verified evidence.
-
-## Recommendations supported
-
-ARCH-001, ARCH-002, ARCH-004 and TEST-001.
+Adapter registries and shared contracts are useful when several real methods exist. They would be speculative overhead for a single simple login flow.

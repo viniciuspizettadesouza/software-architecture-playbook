@@ -10,6 +10,6 @@ Prefer tests that interact with components through user-visible roles, labels, t
 
 Vitest for React component tests.
 
-## Evidence
+## Project examples
 
 MercadoZetta, Auth Lab, Engineering Case Studies.

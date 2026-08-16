@@ -20,4 +20,7 @@ A system becomes easier to reason about when responsibilities and trust boundari
 
 ## Related
 
-ARCH-001, ARCH-004, API-001, DATA-001, SEC-001, SEC-002.
+- [Dependency Inversion](../concepts/dependency-inversion.md)
+- [Ports and Adapters](../concepts/ports-and-adapters.md)
+- [Data Mapper](../concepts/data-mapper.md)
+- [Trust Boundaries](../concepts/trust-boundaries.md)

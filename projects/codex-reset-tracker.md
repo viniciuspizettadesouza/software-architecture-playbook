@@ -1,34 +1,19 @@
-# Project Review — Codex Reset Tracker
+# Codex Reset Tracker
 
-**Evidence status:** Verified snapshot
-**Repository:** https://github.com/viniciuspizettadesouza/codex-reset-tracker
-**Analyzed snapshot:** `afea5a82266ab447b957115f7445191e2b530d8b`
-**Reviewed:** 2026-08-16
-**Weight:** 4/5
+Privacy-conscious quota monitor split between a credential-owning local process and a hosted dashboard.
 
-## Context
+## Interesting architecture decisions
 
-Privacy-conscious quota monitor split between a credential-owning local process and a hosted Next.js dashboard.
-
-## Architecture summary
+Credentials remain local. Only a small authenticated and sanitized payload crosses into the hosted system:
 
 ```text
-Codex credentials → local monitor → sanitized authenticated payload
-                                         ↓
-                                  hosted ingest/database
-                                         ↓
-                                      dashboard
+credentials → local monitor → minimal payload → hosted ingest → dashboard
 ```
 
-## Strong decisions observed
+The component split makes privilege and data ownership explicit rather than forwarding stronger upstream credentials.
 
-- [FND-CRT-001](../findings/FND-CRT-001-trust-boundary.md): credentials remain behind a local/cloud trust boundary.
-- [FND-CRT-002](../findings/FND-CRT-002-data-minimization.md): strict payload minimizes information crossing the boundary.
+Related concepts: [Trust Boundaries](../concepts/trust-boundaries.md), [Ports and Adapters](../concepts/ports-and-adapters.md) and [Separation of Concerns](../concepts/separation-of-concerns.md).
 
-## Weaknesses / improvement opportunities
+## Trade-off to remember
 
-Operational collection workflows exist, but a generic validation CI would make build, lint and test expectations more visible.
-
-## Recommendations supported
-
-SEC-001, SEC-002 and ARCH-004.
+The extra protocol and deployment surface are justified by credential isolation. Without that risk, two components could be needless operational complexity.

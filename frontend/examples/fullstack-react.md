@@ -20,4 +20,4 @@ Vitest + Testing Library + Playwright
 CI quality gates
 ```
 
-Examples in the evidence base: Auth Lab, Codex Reset Tracker, Portugal Prático.
+Project examples: [Auth Lab](../../projects/auth-lab.md), [Codex Reset Tracker](../../projects/codex-reset-tracker.md) and [Portugal Prático](../../projects/portugal-pratico.md).

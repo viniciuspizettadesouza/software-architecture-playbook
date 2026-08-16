@@ -16,4 +16,7 @@ Documentation explains intent. Fitness functions continuously verify it.
 
 ## Related
 
-CI-001, TEST-001, API-001, PKG-001.
+- [Fitness Functions](../concepts/fitness-functions.md)
+- [Layered Testing](../concepts/layered-testing.md)
+- [Contract-first APIs](../concepts/contract-first-api.md)
+- [Artifact Testing](../concepts/artifact-testing.md)

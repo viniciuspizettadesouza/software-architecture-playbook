@@ -1,47 +1,27 @@
-# Project Review — MercadoZetta
+# MercadoZetta
 
-**Evidence status:** Historical scan
-**Analyzed snapshot:** Not recorded
-**Review reconstructed:** 2026-08-16
-**Weight:** 5/5
+Production-oriented multitenant marketplace with a React frontend, Express API and PostgreSQL persistence.
 
-## Context
+## Interesting architecture decisions
 
-Production-oriented multitenant marketplace with React frontend, Express API, PostgreSQL/Drizzle persistence and comparatively deep production/CI concerns.
+### Generated API contracts
 
-## Architecture summary
+Runtime Zod schemas feed OpenAPI and generated TypeScript consumer contracts, reducing independently maintained representations.
 
-```text
-React consumer ← generated OpenAPI types ← backend Zod contracts
-                                            ↓
-Express application → repositories/mappers → PostgreSQL
-```
+Related concepts: [Contract-first APIs](../concepts/contract-first-api.md), [DRY](../concepts/dry.md) and [Fitness Functions](../concepts/fitness-functions.md).
 
-## Technologies
+### Persistence mapping
 
-| Area | Choice | Role | Impact |
-|---|---|---|---|
-| Frontend | React, TypeScript, Vite | Interactive client | High |
-| API | Express, Zod, OpenAPI | HTTP and authoritative contracts | High |
-| Persistence | PostgreSQL, Drizzle | Durable multitenant data | High |
-| Remote state | TanStack Query | Request lifecycle/cache | Medium |
-| Verification | Vitest, Testing Library, Supertest, Playwright | Layered tests | Medium |
+Database representation is mapped before reaching application/domain code. This keeps storage-specific shapes and conversions at the persistence boundary.
 
-## Strong decisions observed
+Related concepts: [Data Mapper](../concepts/data-mapper.md), [Repository Pattern](../concepts/repository-pattern.md) and [Separation of Concerns](../concepts/separation-of-concerns.md).
 
-- [FND-MZ-001](../findings/FND-MZ-001-generated-api-contracts.md): generated API contracts.
-- [FND-MZ-002](../findings/FND-MZ-002-persistence-mapping.md): explicit persistence mapping.
-- [FND-MZ-003](../findings/FND-MZ-003-architecture-decisions.md): significant decisions recorded as ADRs.
-- [FND-MZ-004](../findings/FND-MZ-004-layered-ci.md): CI responsibilities separated by risk.
+### Decisions and delivery checks
 
-## Weaknesses / improvement opportunities
+Significant decisions were recorded as ADRs, while CI separated static checks, unit/integration coverage and browser journeys by risk.
 
-The source scan did not retain the repository URL, commit or evidence paths. Re-scan the project before treating these observations as verified evidence.
+Related concepts: [ADRs](../concepts/adr.md), [Layered Testing](../concepts/layered-testing.md) and [Fitness Functions](../concepts/fitness-functions.md).
 
-## Recommendations supported
+## Trade-off to remember
 
-API-001, DATA-001, ARCH-004, ADR-001, TEST-001 and CI-001.
-
-## Caution
-
-This was the strongest full-stack project in the initial scan, but its production mechanisms should not automatically be copied into smaller systems.
+These mechanisms fit a production-oriented full-stack system but should not automatically be copied into smaller applications.

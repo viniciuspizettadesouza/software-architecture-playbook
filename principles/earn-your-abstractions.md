@@ -20,4 +20,6 @@ Temporary duplication can be cheaper than a premature abstraction that later con
 
 ## Related
 
-ARCH-003, SIMPLE-001.
+- [YAGNI](../concepts/yagni.md)
+- [DRY](../concepts/dry.md)
+- [Proportional Architecture](../concepts/proportional-architecture.md)

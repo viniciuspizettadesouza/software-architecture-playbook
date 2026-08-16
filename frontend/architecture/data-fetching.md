@@ -24,4 +24,4 @@ TypeScript types disappear at runtime. Data from HTTP, storage, user input or th
 
 For sufficiently large APIs, prefer one authoritative contract and generated frontend types over manually duplicated DTOs.
 
-See API-001.
+See [Contract-first APIs](../../concepts/contract-first-api.md).

@@ -2,21 +2,18 @@
 
 ## Application persistence
 
-[DATA-001](../recommendations/DATA-001-persistence-mapping.md) recommends a mapping boundary only when storage representation and application semantics differ. It remains `Assess` until MercadoZetta's historical mapper evidence is re-verified.
+Use a [Data Mapper](../concepts/data-mapper.md) or [Repository](../concepts/repository-pattern.md) boundary when storage representation and application semantics meaningfully differ. Avoid mechanical layers for simple CRUD.
 
 ## Analytical and ML results
 
-[REPRO-001](../recommendations/REPRO-001-traceable-results.md) is supported by a verified TCC reconstruction snapshot. Preserve input identity, hashes, environment assumptions, deterministic execution and visible result conflicts.
+Preserve input identity, hashes, environment assumptions, deterministic execution and visible result conflicts. See [Reproducible Results](../concepts/reproducible-results.md) and the [TCC Project](../projects/tcc-project.md).
 
-## Current non-decisions
-
-The playbook has no default database, ORM, migration tool, warehouse, object store or ML platform. Technology selection must follow consistency, scale, operational, privacy and reproducibility requirements.
-
-## Minimum review questions
+## Review questions
 
 - Which representation is authoritative?
-- Which data may cross each trust boundary?
+- Which data may cross each [trust boundary](../concepts/trust-boundaries.md)?
 - Can an output be traced to inputs and execution?
 - What recovery, migration and retention behavior is required?
 - Can important schema, hash and privacy constraints be automated?
 
+There is no universal database, ORM, warehouse, object store or ML platform default.

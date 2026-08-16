@@ -15,4 +15,6 @@ Before adding a framework, service, abstraction or package, ask:
 
 ## Related
 
-SIMPLE-001, ARCH-003.
+- [KISS](../concepts/kiss.md)
+- [YAGNI](../concepts/yagni.md)
+- [Proportional Architecture](../concepts/proportional-architecture.md)

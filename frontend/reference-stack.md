@@ -103,4 +103,4 @@ No default is currently declared for:
 - CSS strategy;
 - monorepo tooling.
 
-These should be promoted only after more evidence and comparisons are collected.
+Choose these only after project requirements and trade-offs make a preference clear.

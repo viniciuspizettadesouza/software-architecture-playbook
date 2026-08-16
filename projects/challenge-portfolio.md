@@ -1,30 +1,20 @@
-# Project Review — Challenge Portfolio
-
-**Evidence status:** Verified snapshot
-**Repository:** https://github.com/viniciuspizettadesouza/challenge-portfolio
-**Analyzed snapshot:** `841ef4b9b3f5f5d9a51148a077f4e64f1894e2b0`
-**Reviewed:** 2026-08-16
-**Weight:** 4/5
-
-## Context
+# Challenge Portfolio
 
 Curated archive of historical technical challenges containing sanitized originals and maintained executable demonstrations.
 
-## Architecture summary
+## Interesting architecture decisions
+
+Historical source is preserved outside executable workspaces, while deliberate adaptations live in maintained `demo/` directories:
 
 ```text
-original/ → preserved, immutable, outside workspace execution
-demo/     → deliberate adaptation, inside maintained workspace
+original/ → immutable reference
+demo/     → maintained executable adaptation
 ```
 
-## Strong decisions observed
+This avoids installing obsolete dependencies or accidentally treating historical code as current guidance.
 
-- [FND-CP-001](../findings/FND-CP-001-preserved-code.md): original historical code is excluded from the pnpm workspace.
+Related concepts: [Separation of Concerns](../concepts/separation-of-concerns.md), [Artifact Testing](../concepts/artifact-testing.md) and [Reproducible Results](../concepts/reproducible-results.md).
 
-## Weaknesses / improvement opportunities
+## Trade-off to remember
 
-Dual copies need clear provenance and can drift if adaptations do not document their relationship to the original.
-
-## Recommendations supported
-
-LEGACY-001.
+Dual copies consume space and can drift, so adaptations should state how they relate to the original.

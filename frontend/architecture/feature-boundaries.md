@@ -31,4 +31,6 @@ Before extracting shared code, ask:
 
 ## Related
 
-ARCH-001, ARCH-002, ARCH-003.
+- [Feature-based Architecture](../../concepts/feature-based-architecture.md)
+- [Dependency Inversion](../../concepts/dependency-inversion.md)
+- [Cohesion and Coupling](../../concepts/cohesion-and-coupling.md)

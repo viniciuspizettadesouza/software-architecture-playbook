@@ -1,10 +1,9 @@
 # TanStack Query
 
-**Label:** Recommended when needed
+**Label:** Use when needed
 **Responsibility:** Remote/server state
 **Architectural impact:** Medium
 **Reviewed:** 2026-08-16
-**Evidence quality:** Historical
 **Observed versions:** Not retained in the source scan
 
 ## Use when
@@ -27,9 +26,9 @@ Centralizes common server-state concerns instead of reimplementing them feature 
 
 Adds another state model and invalidation semantics that the team must understand.
 
-## Evidence
+## Project example
 
-[MercadoZetta](../../projects/mercadozetta.md). This remains historical evidence until that project is re-scanned.
+[MercadoZetta](../../projects/mercadozetta.md) uses it for remote request lifecycle and caching.
 
 ## Alternatives and revisit trigger
 

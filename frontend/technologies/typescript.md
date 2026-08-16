@@ -3,7 +3,6 @@
 **Label:** Default
 **Architectural impact:** High
 **Reviewed:** 2026-08-16
-**Evidence quality:** Verified
 **Observed versions:** Personal Portfolio `~6.0.3`; Portugal Prático `^5`; Habemus Papam `^6.0.3`
 
 ## Role
@@ -18,9 +17,9 @@ Static type system for application contracts and implementation.
 - generate types from authoritative contracts when useful;
 - keep public contracts intentional.
 
-## Evidence
+## Project examples
 
-Used throughout the indexed modern [project evidence](../../projects/inventory.md), with strict configurations directly observed in Engineering Case Studies, Personal Portfolio and Habemus Papam.
+Used throughout [Engineering Case Studies](../../projects/engineering-case-studies.md), [Personal Portfolio](../../projects/personal-portfolio.md) and [Habemus Papam](../../projects/habemus-papam.md).
 
 ## Alternatives and revisit trigger
 

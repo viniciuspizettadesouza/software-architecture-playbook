@@ -1,10 +1,9 @@
 # MUI
 
-**Label:** Contextual
+**Label:** Alternative
 **Responsibility:** UI component system
 **Architectural impact:** Medium
 **Reviewed:** 2026-08-16
-**Evidence quality:** None in indexed findings
 **Observed versions:** None
 
 ## Use when
@@ -27,6 +26,6 @@ Wrap only components for which your product needs a stable design-system abstrac
 
 Headless primitives, utility-first styling, another component system or product-owned components.
 
-## Evidence and revisit trigger
+## Revisit trigger
 
-Retain as a contextual catalog entry, not a default. Promote only after a project review demonstrates its benefit and coupling in a concrete design-system context.
+Keep it as an alternative, not a default. Reassess after using it in a concrete design-system context where its benefits and coupling can be compared.

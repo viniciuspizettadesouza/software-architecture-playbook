@@ -1,32 +1,21 @@
-# Project Review — Habemus Papam
+# Habemus Papam
 
-**Evidence status:** Verified snapshot
-**Repository:** https://github.com/viniciuspizettadesouza/habemus-papam
-**Analyzed snapshot:** `97a2eccf6bfcb9b58868cb68d0f8b1e92e1d2b53`
-**Reviewed:** 2026-08-16
-**Weight:** 5/5
+Monorepo containing a public Pope-information core package, a private CLI and a browser extension.
 
-## Context
+## Interesting architecture decisions
 
-Monorepo containing a public Pope-information core package, private CLI and Chrome extension.
-
-## Architecture summary
+All delivery mechanisms depend on the same framework-independent public core API:
 
 ```text
 npm consumers ─┐
-CLI ───────────┼──→ public core API → data and date rules
+CLI ───────────┼──→ core API → data and date rules
 extension ─────┘
 ```
 
-## Strong decisions observed
+CI also packs and installs the actual npm artifact and exercises delivery-specific outputs.
 
-- [FND-HAB-001](../findings/FND-HAB-001-independent-core.md): delivery mechanisms depend on a framework-independent core.
-- [FND-HAB-002](../findings/FND-HAB-002-artifact-testing.md): CI tests the packed package and delivery artifacts.
+Related concepts: [Clean Architecture](../concepts/clean-architecture.md), [Dependency Inversion](../concepts/dependency-inversion.md), [Artifact Testing](../concepts/artifact-testing.md) and [Fitness Functions](../concepts/fitness-functions.md).
 
-## Weaknesses / improvement opportunities
+## Trade-off to remember
 
-The reusable public package creates compatibility and release obligations. This is justified by multiple real consumers but would be overhead for a single-interface application.
-
-## Recommendations supported
-
-ARCH-001, ARCH-003, TEST-001, CI-001 and PKG-001.
+A public core creates compatibility and release obligations. Multiple real consumers justify that cost here; a single-interface application may not.

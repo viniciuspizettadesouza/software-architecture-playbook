@@ -1,9 +1,8 @@
 # React Router
 
-**Label:** Recommended when a client-side application needs meaningful routing
+**Label:** Use when needed
 **Architectural impact:** Medium
 **Reviewed:** 2026-08-16
-**Evidence quality:** Mixed
 **Observed versions:** Not recorded in this playbook revision
 
 ## Use when
@@ -20,7 +19,7 @@ The application is genuinely a single view with no navigation semantics.
 
 Framework-native routing when using Next.js or another full-stack framework.
 
-## Evidence
+## Project examples
 
 [Engineering Case Studies](../../projects/engineering-case-studies.md) verifies meaningful client-side routes; [Personal Portfolio](../../projects/personal-portfolio.md) is the counterexample where routing is unnecessary.
 

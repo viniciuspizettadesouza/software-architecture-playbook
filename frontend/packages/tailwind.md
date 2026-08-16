@@ -1,10 +1,9 @@
 # Tailwind CSS
 
-**Label:** Contextual
+**Label:** Alternative
 **Responsibility:** Styling system
 **Architectural impact:** Low to Medium
 **Reviewed:** 2026-08-16
-**Evidence quality:** Mixed
 **Observed versions:** Personal Portfolio `^4.3.3`; Portugal Prático `^4`
 
 ## Use when
@@ -19,9 +18,9 @@
 - requires conventions for reusable UI patterns;
 - does not itself provide accessible interactive components.
 
-## Evidence
+## Project examples
 
-[MercadoZetta](../../projects/mercadozetta.md) is historical evidence; [Engineering Case Studies](../../projects/engineering-case-studies.md) and [Personal Portfolio](../../projects/personal-portfolio.md) have recorded snapshots.
+[MercadoZetta](../../projects/mercadozetta.md), [Engineering Case Studies](../../projects/engineering-case-studies.md) and [Personal Portfolio](../../projects/personal-portfolio.md) show utility-first styling in different contexts.
 
 ## Alternatives and revisit trigger
 

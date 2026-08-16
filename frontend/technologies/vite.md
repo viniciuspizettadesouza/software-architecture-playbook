@@ -3,7 +3,6 @@
 **Label:** Default for client-side apps
 **Architectural impact:** Medium
 **Reviewed:** 2026-08-16
-**Evidence quality:** Mixed
 **Observed versions:** Personal Portfolio `^6.4.3`
 
 ## Use when
@@ -20,9 +19,9 @@ Simple project model, fast development loop and fewer framework-specific server 
 
 You must choose routing/data/server integration separately. If the product genuinely needs server-rendering or server-only capabilities, a full-stack framework may be more coherent.
 
-## Evidence
+## Project examples
 
-[MercadoZetta](../../projects/mercadozetta.md) is historical evidence; [Engineering Case Studies](../../projects/engineering-case-studies.md) and [Personal Portfolio](../../projects/personal-portfolio.md) have recorded snapshots.
+[MercadoZetta](../../projects/mercadozetta.md), [Engineering Case Studies](../../projects/engineering-case-studies.md) and [Personal Portfolio](../../projects/personal-portfolio.md) use Vite in different client-side contexts.
 
 ## Alternatives and revisit trigger
 

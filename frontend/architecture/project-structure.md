@@ -44,4 +44,6 @@ The architecture should grow with the problem.
 
 ## Related
 
-ARCH-002, ARCH-003, SIMPLE-001.
+- [Feature-based Architecture](../../concepts/feature-based-architecture.md)
+- [Cohesion and Coupling](../../concepts/cohesion-and-coupling.md)
+- [Proportional Architecture](../../concepts/proportional-architecture.md)
